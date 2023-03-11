@@ -1,7 +1,10 @@
-from datetime import date
+import requests
 
-def info(name: str, birthday: date) -> str:
-    return f'У {name} день рождения: {birthday}'
+api_url = 'http://numbersapi.com/43/'
 
+response = requests.get(api_url)
 
-print(info('BACR', date(1999, 1, 1)))
+if response.status_code == 200:
+    print(response.text)
+else:
+    print('no', response.status_code)
