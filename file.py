@@ -1,3 +1,7 @@
-print('preved')
+from datetime import date
 
-print('2 x 2 = 4')
+def info(name: str, birthday: date) -> str:
+    return f'У {name} день рождения: {birthday}'
+
+
+print(info('BACR', date(1999, 1, 1)))
